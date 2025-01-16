@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.2"
+android-tools = "31.8.0"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
@@ -11,9 +12,16 @@ androidx-espresso-core = "3.6.1"
 androidx-lifecycle = "2.8.4"
 androidx-material = "1.12.0"
 androidx-test-junit = "1.2.1"
-compose-multiplatform = "1.7.0"
+compose-multiplatform = "1.7.3"
 junit = "4.13.2"
 kotlin = "2.1.0"
+koin = "4.0.0"
+coroutines = "1.10.1"
+kotlinx-datetime="0.6.0"
+kotlinx-serialization-json="1.8.0"
+detekt = "1.23.7"
+detektext-compose = "1.4.0"
+detektext-compose-twitter = "0.0.26"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -29,9 +37,50 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 
+# Dependencies of the included build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "android-tools" }
+compose-gradlePlugin = { module = "org.jetbrains.compose:org.jetbrains.compose.gradle.plugin", version.ref = "compose-multiplatform" }
+compiler-compose-gradlePlugin = { group = "org.jetbrains.kotlin.plugin.compose", name = "org.jetbrains.kotlin.plugin.compose.gradle.plugin", version.ref = "kotlin" }
+plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+# End
+
+
+# Koin
+koin-android = {module = "io.insert-koin:koin-android", version.ref = "koin"}
+koin-compose-viewmodel = {module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin"}
+koin-compose = {module = "io.insert-koin:koin-compose", version.ref = "koin"}
+koin-core = {module = "io.insert-koin:koin-core", version.ref = "koin"}
+# End
+
+# Kotlin
+kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+# End
+
+# Detekt
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version.ref = "detektext-compose" }
+detekt-twitter-compose-rules = { module = "com.twitter.compose.rules:detekt", version.ref = "detektext-compose-twitter" }
+# End
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+detektPlugin = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+# Plugins defined by this project
+com-sd-template-kmp-lib-plugin = { id = "com.sd.template.kmp-lib-plugin", version = "unspecified" }
+com-sd-template-kmp-app-plugin = { id = "com.sd.template.kmp-app-plugin", version = "unspecified" }
+com-sd-template-cmp-plugin = { id = "com.sd.template.cmp-plugin", version = "unspecified" }
+com-sd-template-detekt-plugin = { id = "com.sd.template.detekt-plugin", version = "unspecified" }
+# End
