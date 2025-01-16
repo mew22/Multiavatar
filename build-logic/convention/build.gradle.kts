@@ -23,6 +23,8 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.compiler.compose.gradlePlugin)
+    compileOnly(libs.buildKonfig.gradlePlugin)
+    compileOnly(libs.buildKonfig.compiler.gradlePlugin)
     implementation (libs.plugin.detekt)
     implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
     // workaround to allow precompiled script to access version catalog

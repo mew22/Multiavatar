@@ -16,10 +16,12 @@ class KotlinMultiplatformLibPlugin: Plugin<Project> {
             apply(libs.plugins.kotlinMultiplatform.get().pluginId)
             apply(libs.plugins.androidLibrary.get().pluginId)
             apply(libs.plugins.kotlinxSerialization.get().pluginId)
+            apply(libs.plugins.buildKonfig.get().pluginId)
             apply(libs.plugins.com.sd.template.detekt.plugin.get().pluginId)
         }
 
         extensions.configure<KotlinMultiplatformExtension>(::configureKotlinMultiplatform)
         extensions.configure<LibraryExtension>(::configureKotlinAndroid)
+        extensions.configure<BuildKonfigExtension>(::configureBuildKonfig)
     }
 }
