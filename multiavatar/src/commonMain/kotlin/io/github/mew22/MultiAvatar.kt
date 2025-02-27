@@ -4,6 +4,7 @@ package io.github.mew22
 
 import kotlinx.datetime.Clock
 import org.kotlincrypto.hash.sha2.SHA256
+import kotlin.collections.iterator
 import kotlin.jvm.JvmInline
 import kotlin.math.roundToInt
 import kotlin.random.Random
