@@ -71,7 +71,7 @@ class ComposeMultiplatformPlugin : Plugin<Project> {
                     nativeDistributions {
                         targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
                         packageName = "io.github.mew22"
-                        packageVersion = "1.0.0"
+                        packageVersion = "1.0.1"
                     }
                 }
             }
