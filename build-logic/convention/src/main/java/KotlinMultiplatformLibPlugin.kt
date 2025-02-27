@@ -1,9 +1,7 @@
 import com.android.build.api.dsl.LibraryExtension
-import com.codingfeline.buildkonfig.gradle.BuildKonfigExtension
-import com.sd.template.convention.libs
-import com.sd.template.convention.configureKotlinMultiplatform
-import com.sd.template.convention.configureKotlinAndroid
-import com.sd.template.convention.configureBuildKonfig
+import io.github.mew22.convention.libs
+import io.github.mew22.convention.configureKotlinMultiplatform
+import io.github.mew22.convention.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -15,13 +13,10 @@ class KotlinMultiplatformLibPlugin: Plugin<Project> {
         with(pluginManager){
             apply(libs.plugins.kotlinMultiplatform.get().pluginId)
             apply(libs.plugins.androidLibrary.get().pluginId)
-            apply(libs.plugins.kotlinxSerialization.get().pluginId)
-            apply(libs.plugins.buildKonfig.get().pluginId)
-            apply(libs.plugins.com.sd.template.detekt.plugin.get().pluginId)
+            apply(libs.plugins.io.github.mew22.detekt.plugin.get().pluginId)
         }
 
         extensions.configure<KotlinMultiplatformExtension>(::configureKotlinMultiplatform)
         extensions.configure<LibraryExtension>(::configureKotlinAndroid)
-        extensions.configure<BuildKonfigExtension>(::configureBuildKonfig)
     }
 }

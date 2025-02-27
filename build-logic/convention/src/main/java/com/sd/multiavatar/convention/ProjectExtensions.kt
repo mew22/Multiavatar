@@ -1,4 +1,4 @@
-package com.sd.template.convention
+package io.github.mew22.convention
 
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Project

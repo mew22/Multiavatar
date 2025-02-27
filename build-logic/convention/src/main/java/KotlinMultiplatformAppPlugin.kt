@@ -1,9 +1,7 @@
 import com.android.build.api.dsl.ApplicationExtension
-import com.codingfeline.buildkonfig.gradle.BuildKonfigExtension
-import com.sd.template.convention.libs
-import com.sd.template.convention.configureKotlinMultiplatform
-import com.sd.template.convention.configureKotlinAndroid
-import com.sd.template.convention.configureBuildKonfig
+import io.github.mew22.convention.libs
+import io.github.mew22.convention.configureKotlinMultiplatform
+import io.github.mew22.convention.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -16,13 +14,12 @@ class KotlinMultiplatformAppPlugin: Plugin<Project> {
             apply(libs.plugins.kotlinMultiplatform.get().pluginId)
             apply(libs.plugins.androidApplication.get().pluginId)
             apply(libs.plugins.kotlinxSerialization.get().pluginId)
-            apply(libs.plugins.buildKonfig.get().pluginId)
-            apply(libs.plugins.com.sd.template.detekt.plugin.get().pluginId)
+            apply(libs.plugins.io.github.mew22.detekt.plugin.get().pluginId)
         }
 
         extensions.configure<ApplicationExtension> {
             defaultConfig {
-                applicationId = "com.sd.template"
+                applicationId = "io.github.mew22"
                 targetSdk = libs.versions.android.targetSdk.get().toInt()
                 versionCode = 1
                 versionName = "1.0"
@@ -30,6 +27,5 @@ class KotlinMultiplatformAppPlugin: Plugin<Project> {
         }
         extensions.configure<KotlinMultiplatformExtension>(::configureKotlinMultiplatform)
         extensions.configure<ApplicationExtension>(::configureKotlinAndroid)
-        extensions.configure<BuildKonfigExtension>(::configureBuildKonfig)
     }
 }

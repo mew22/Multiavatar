@@ -1,5 +1,5 @@
 [versions]
-agp = "8.8.0"
+agp = "8.8.1"
 android-tools = "31.8.0"
 android-compileSdk = "35"
 android-minSdk = "24"
@@ -14,15 +14,17 @@ androidx-material = "1.12.0"
 androidx-test-junit = "1.2.1"
 compose-multiplatform = "1.7.3"
 junit = "4.13.2"
-buildKonfig = "0.15.2"
 kotlin = "2.1.0"
 koin = "4.0.0"
 coroutines = "1.10.1"
-kotlinx-datetime="0.6.0"
-kotlinx-serialization-json="1.8.0"
 detekt = "1.23.7"
 detektext-compose = "1.4.0"
 detektext-compose-twitter = "0.0.26"
+coil = "3.1.0"
+navigation="2.8.0-alpha13"
+kotlinx-datetime="0.6.1"
+kotlinx-serialization-json="1.8.0"
+sha2 = "0.6.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -37,6 +39,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+sha2 = { module = "org.kotlincrypto.hash:sha2", version.ref = "sha2" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
@@ -45,21 +48,19 @@ android-tools-common = { group = "com.android.tools", name = "common", version.r
 compose-gradlePlugin = { module = "org.jetbrains.compose:org.jetbrains.compose.gradle.plugin", version.ref = "compose-multiplatform" }
 compiler-compose-gradlePlugin = { group = "org.jetbrains.kotlin.plugin.compose", name = "org.jetbrains.kotlin.plugin.compose.gradle.plugin", version.ref = "kotlin" }
 plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
-buildKonfig-gradlePlugin = { module = "com.codingfeline.buildkonfig:com.codingfeline.buildkonfig.gradle.plugin", version.ref = "buildKonfig" }
-buildKonfig-compiler-gradlePlugin = { module = "com.codingfeline.buildkonfig:buildkonfig-compiler", version.ref = "buildKonfig" }
 # End
-
 
 # Koin
 koin-android = {module = "io.insert-koin:koin-android", version.ref = "koin"}
 koin-compose-viewmodel = {module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin"}
+koin-compose-viewmodel-navigation = {module = "io.insert-koin:koin-compose-viewmodel-navigation", version.ref = "koin"}
 koin-compose = {module = "io.insert-koin:koin-compose", version.ref = "koin"}
 koin-core = {module = "io.insert-koin:koin-core", version.ref = "koin"}
 # End
 
 # Kotlin
-kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
@@ -72,6 +73,16 @@ detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version.ref = 
 detekt-twitter-compose-rules = { module = "com.twitter.compose.rules:detekt", version.ref = "detektext-compose-twitter" }
 # End
 
+# Navigation
+navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation" }
+# End
+
+# Coil
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
+coil-svg = { module = "io.coil-kt.coil3:coil-svg", version.ref = "coil" }
+# End
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
@@ -80,11 +91,10 @@ composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "k
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 detektPlugin = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
-buildKonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildKonfig" }
 
 # Plugins defined by this project
-com-sd-template-kmp-lib-plugin = { id = "com.sd.template.kmp-lib-plugin", version = "unspecified" }
-com-sd-template-kmp-app-plugin = { id = "com.sd.template.kmp-app-plugin", version = "unspecified" }
-com-sd-template-cmp-plugin = { id = "com.sd.template.cmp-plugin", version = "unspecified" }
-com-sd-template-detekt-plugin = { id = "com.sd.template.detekt-plugin", version = "unspecified" }
+io-github-mew22-kmp-lib-plugin = { id = "io.github.mew22.kmp-lib-plugin", version = "unspecified" }
+io-github-mew22-kmp-app-plugin = { id = "io.github.mew22.kmp-app-plugin", version = "unspecified" }
+io-github-mew22-cmp-plugin = { id = "io.github.mew22.cmp-plugin", version = "unspecified" }
+io-github-mew22-detekt-plugin = { id = "io.github.mew22.detekt-plugin", version = "unspecified" }
 # End

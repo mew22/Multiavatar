@@ -1,9 +1,10 @@
-package com.sd.template.convention
+package io.github.mew22.convention
 
 import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import kotlin.jvm.kotlin
 
 internal fun Project.configureKotlinMultiplatform(
     extension: KotlinMultiplatformExtension

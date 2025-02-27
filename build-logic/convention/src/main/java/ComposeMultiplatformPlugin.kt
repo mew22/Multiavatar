@@ -1,4 +1,4 @@
-import com.sd.template.convention.libs
+import io.github.mew22.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -14,7 +14,7 @@ class ComposeMultiplatformPlugin : Plugin<Project> {
         with(pluginManager){
             apply(libs.plugins.composeMultiplatform.get().pluginId)
             apply(libs.plugins.composeCompiler.get().pluginId)
-            apply(libs.plugins.com.sd.template.detekt.plugin.get().pluginId)
+            apply(libs.plugins.io.github.mew22.detekt.plugin.get().pluginId)
         }
 
         val composeDeps = extensions.getByType<ComposeExtension>().dependencies
@@ -35,8 +35,14 @@ class ComposeMultiplatformPlugin : Plugin<Project> {
                         implementation(composeDeps.ui)
                         implementation(composeDeps.components.resources)
                         implementation(composeDeps.components.uiToolingPreview)
+                        implementation(libs.coil.compose)
+                        implementation(libs.coil.svg)
+                        implementation(libs.navigation)
                         implementation(libs.androidx.lifecycle.viewmodel)
                         implementation(libs.androidx.lifecycle.runtime.compose)
+                        implementation(libs.koin.compose)
+                        implementation(libs.koin.compose.viewmodel)
+                        implementation(libs.koin.compose.viewmodel.navigation)
                     }
                 }
             }

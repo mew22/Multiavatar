@@ -1,12 +1,10 @@
 plugins {
-    alias(libs.plugins.com.sd.template.kmp.app.plugin)
-    alias(libs.plugins.com.sd.template.cmp.plugin)
+    alias(libs.plugins.io.github.mew22.kmp.app.plugin)
+    alias(libs.plugins.io.github.mew22.cmp.plugin)
 }
 
-tasks.register("runDebug", Exec::class) {
-    dependsOn("clean", "uninstallDebug", "installDebug")
-    commandLine(
-        android.adbExecutable.path, "shell", "am", "start", "-n",
-        "com.sd.template/com.sd.template.MainActivity"
-    )
+kotlin {
+    sourceSets.commonMain.dependencies {
+        implementation(projects.multiavatar)
+    }
 }

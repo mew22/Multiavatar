@@ -1,4 +1,4 @@
-import com.sd.template.convention.libs
+import io.github.mew22.convention.libs
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.gradle.api.Plugin

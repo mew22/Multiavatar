@@ -4,7 +4,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.sd.template.build_logic.convention"
+group = "io.github.mew22.build_logic.convention"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -23,8 +23,6 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.compiler.compose.gradlePlugin)
-    compileOnly(libs.buildKonfig.gradlePlugin)
-    compileOnly(libs.buildKonfig.compiler.gradlePlugin)
     implementation (libs.plugin.detekt)
     implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
     // workaround to allow precompiled script to access version catalog
@@ -40,19 +38,19 @@ tasks {
 gradlePlugin {
     plugins {
         register("kotlinMultiplatformLib") {
-            id = "com.sd.template.kmp-lib-plugin"
+            id = "io.github.mew22.kmp-lib-plugin"
             implementationClass = "KotlinMultiplatformLibPlugin"
         }
         register("kotlinMultiplatformApp") {
-            id = "com.sd.template.kmp-app-plugin"
+            id = "io.github.mew22.kmp-app-plugin"
             implementationClass = "KotlinMultiplatformAppPlugin"
         }
         register("composeMultiplatform") {
-            id = "com.sd.template.cmp-plugin"
+            id = "io.github.mew22.cmp-plugin"
             implementationClass = "ComposeMultiplatformPlugin"
         }
         register("detektPlugin") {
-            id = "com.sd.template.detekt-plugin"
+            id = "io.github.mew22.detekt-plugin"
             implementationClass = "DetektConventionPlugin"
         }
     }

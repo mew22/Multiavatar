@@ -1,4 +1,4 @@
-rootProject.name = "KMP_Template"
+rootProject.name = "MultiAvatarLib"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
@@ -32,4 +32,5 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":multiavatar")
 includeBuild("build-logic")

@@ -1,4 +1,4 @@
-package com.sd.template.convention
+package io.github.mew22.convention
 
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
@@ -9,7 +9,7 @@ internal fun Project.configureKotlinAndroid(
 ) {
     commonExtension.apply {
         val moduleName = path.split(":").drop(2).joinToString(".")
-        namespace = if(moduleName.isNotEmpty()) "com.sd.template.$moduleName" else "com.sd.template"
+        namespace = if(moduleName.isNotEmpty()) "io.github.mew22.$moduleName" else "io.github.mew22"
 
         compileSdk = libs.versions.android.compileSdk.get().toInt()
 
