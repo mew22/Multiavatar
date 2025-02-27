@@ -1,5 +1,19 @@
 # Multiavatar #
 
+[![badge-latest-release]][url-latest-release]
+[![badge-license]][url-license]
+[![badge-kotlin]][url-kotlin]
+
+![badge-platform-android]
+![badge-platform-ios]
+![badge-platform-wasm]
+![badge-platform-js]
+![badge-support-js-ir]
+![badge-platform-jvm]
+![badge-platform-linux]
+![badge-platform-macos]
+![badge-platform-windows]
+
 <img src="https://raw.githubusercontent.com/multiavatar/Multiavatar/main/logo.png?v=001" width="65">
 
 This is a Kotlin transcription of the original [Multiavatar script](https://github.com/multiavatar/Multiavatar) compatible with Compose Multiplatform.
@@ -101,7 +115,7 @@ The string of characters is also the input for the Multiavatar script, which con
 
 `474747474747` - this is the 12,230,590,464th avatar (or the 16th initial avatar + its "C" color theme).
 
-### Web API (SHA264) ###
+### Web API (SHA256) ###
 
 To get an avatar as SVG code, add the avatar's ID to the URL:
 
@@ -134,3 +148,26 @@ You can use Multiavatar for free, as long as the conditions described in the [LI
 ### More info ###
 
 For additional information and extended functionality, visit the [multiavatar.com](https://multiavatar.com) web-app.
+
+
+<!-- TAG_VERSION -->
+[badge-latest-release]: https://img.shields.io/badge/latest--release-1.0.1-blue.svg?style=flat
+[badge-license]: https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat
+
+<!-- TAG_DEPENDENCIES -->
+[badge-kotlin]: https://img.shields.io/badge/kotlin-2.1.0-blue.svg?logo=kotlin
+
+<!-- TAG_PLATFORMS -->
+[badge-platform-android]: http://img.shields.io/badge/-android-6EDB8D.svg?style=flat
+[badge-platform-jvm]: http://img.shields.io/badge/-jvm-DB413D.svg?style=flat
+[badge-platform-js]: http://img.shields.io/badge/-js-F8DB5D.svg?style=flat
+[badge-platform-linux]: http://img.shields.io/badge/-linux-2D3F6C.svg?style=flat
+[badge-platform-macos]: http://img.shields.io/badge/-macos-111111.svg?style=flat
+[badge-platform-ios]: http://img.shields.io/badge/-ios-CDCDCD.svg?style=flat
+[badge-platform-wasm]: https://img.shields.io/badge/-wasm-624FE8.svg?style=flat
+[badge-platform-windows]: http://img.shields.io/badge/-windows-4D76CD.svg?style=flat
+[badge-support-js-ir]: https://img.shields.io/badge/support-[js--IR]-AAC4E0.svg?style=flat
+
+[url-kotlin]: https://kotlinlang.org
+[url-latest-release]: https://github.com/mew22/multiavatar/releases/latest
+[url-license]: https://www.apache.org/licenses/LICENSE-2.0.txt
